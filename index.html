@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de Tarefas-Senac</title>
-    <link rel="shortcut icon" href="Senac_logo.svg.png" type="image/x-icon">
+    <title>Gerenciador de Tarefas - Senac</title>
+    <link rel="shortcut icon" href="https://i0.wp.com/centralblogs.com.br/wp-content/uploads/2020/09/senac-logo.png?w=696&ssl=1" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <style>
-      
-    </style>
 </head>
 <body>
     <div id="primary-container">
         <section id="top-container">
             <img id="Senac-logo" src="logobrancasenacfecomercio.png" alt="logo-senac">
-            <div id="title" >Gerenciador de Tarefas</div>
+            <div id="title">Gerenciador de Tarefas</div>
             <div id="buttons">
-                <!-- Botão de calendário -->
                 <button id="openCalendar">
                     <img src="Calendar.png" alt="Calendário">
                 </button>
-                <!-- Relógio -->
                 <div id="clock-container">
                     <span id="time"></span>
                     <div id="date"></div>
@@ -28,16 +23,14 @@
             </div>
         </section>
         <section id="home">
-            <div id="title-home">Organize suas tarefas com <span >Facilidade</span></div>
+            <div id="title-home">Organize suas tarefas com <span>Facilidade</span></div>
             <br>
             <div id="description-home">Crie quadros de tarefas personalizados para gerenciar suas atividades diárias de forma eficiente.</div>
             <br>
-            <button class="btn-header" style="margin:0px;" onclick="window.location.href= 'myTask - interface/quadros/index.html'">Criar Tarefas</button>
+            <button class="btn-header" style="margin:0px;" onclick="window.location.href='myTask - interface/quadros/index.html'">Criar Tarefas</button>
         </section>
-        <br>
     </div>
 
-    <!-- Calendário -->
     <div class="modal" id="calendarModal">
         <div class="modal-content">
             <button class="close-btn" id="closeCalendar">&times;</button>
@@ -48,59 +41,52 @@
         </div>
     </div>
 
-  
     <script>
-       //Relogio
+        // Relógio
         function updateClock() {
-            const timeElement = document.getElementById('time')
-            const dateElement = document.getElementById('date')
-            const now = new Date()
-
+            const timeElement = document.getElementById('time');
+            const dateElement = document.getElementById('date');
+            const now = new Date();
             
-            let hours = now.getHours()
-            let minutes = now.getMinutes()
-            let seconds = now.getSeconds()
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
 
-            //Diada semana
-            const diasDaSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
-            const meses = [
-                "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-                "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-            ]
+            const diasDaSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+            const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
             const diaDaSemana = diasDaSemana[now.getDay()];
-            const dia = now.getDate()
-            const mes = meses[now.getMonth()]
-            const ano = now.getFullYear()
+            const dia = now.getDate();
+            const mes = meses[now.getMonth()];
+            const ano = now.getFullYear();
 
-            hours = hours < 10 ? '0' + hours : hours
-            minutes = minutes < 10 ? '0' + minutes : minutes
-            seconds = seconds < 10 ? '0' + seconds : seconds
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
 
             timeElement.textContent = `${hours}:${minutes}:${seconds}`;
-            dateElement.textContent = `${diaDaSemana}, ${dia} de ${mes} de ${ano}`
+            dateElement.textContent = `${diaDaSemana}, ${dia} de ${mes} de ${ano}`;
         }
 
-        setInterval(updateClock, 1000)
-        updateClock()
+        setInterval(updateClock, 1000);
+        updateClock();
 
-        // Mostrar o calendário
-        const openCalendarButton = document.getElementById('openCalendar')
-        const closeCalendarButton = document.getElementById('closeCalendar')
-        const calendarModal = document.getElementById('calendarModal')
+        const openCalendarButton = document.getElementById('openCalendar');
+        const closeCalendarButton = document.getElementById('closeCalendar');
+        const calendarModal = document.getElementById('calendarModal');
 
         openCalendarButton.addEventListener('click', () => {
-            calendarModal.style.display = 'flex'
-        })
+            calendarModal.style.display = 'flex';
+        });
 
         closeCalendarButton.addEventListener('click', () => {
-            calendarModal.style.display = 'none'
-        })
+            calendarModal.style.display = 'none';
+        });
 
         window.addEventListener('click', (event) => {
             if (event.target === calendarModal) {
-                calendarModal.style.display = 'none'
+                calendarModal.style.display = 'none';
             }
-        })
+        });
     </script>
 </body>
 </html>

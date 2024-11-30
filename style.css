@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -80,13 +79,13 @@ html, body {
 
 /* Container Principal */
 #primary-container {
-    max-width: 1980px;
+    width: 100%; /* Removido max-width */
     margin: auto;
 }
-/*#1e3799 */
 
+/* Top Container */
 #top-container {
-    width: 100%;
+    width: 100%; /* Garantir que ocupe toda a largura */
     padding-block: 30px;
     background: linear-gradient(45deg, #fea50a 0%, #feb41e);
     display: flex;
@@ -102,11 +101,11 @@ html, body {
     color: #fff;
 }
 
-/* Relógio   #0c2461*/
+/* Relógio */
 #clock-container {
     font-size: 20px;
     font-weight: bold;
-    background-color:#003C69 ; 
+    background-color: #003C69; 
     padding: 10px 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -163,14 +162,9 @@ html, body {
     cursor: pointer;
 }
 
-#Senac-logo{
-    position: relative;
-    top: -20px;
-   
-    height: 125px ;
-   
+#Senac-logo {
+    height: 125px;
 }
-
 /* Estilo Responsivo */
 @media (max-width: 1024px) {
     #title {
@@ -192,10 +186,9 @@ html, body {
         width: 42px;
     } 
 
-    #Senac-logo img {
-        width: 42px;
+    #Senac-logo {
+        height: 100px; /* Ajuste a altura do logo */
     }
-    
 
     .modal-content iframe {
         height: 400px;

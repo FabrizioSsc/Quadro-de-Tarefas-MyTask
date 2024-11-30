@@ -8,13 +8,17 @@
 html, body {
     width:100%;
     height:100%;
-    background-color:#361374;
+  background-color: #16337b;
     font-family: "Orbitron";
 }
 
+
+
+
+
 /*principal*/
 .collumn-container {
-    width: 357px; min-width:357px; height:495px; background-color:#4f2991; color:white; 
+    width: 357px; min-width:357px; height:495px; background-color:#1e3799; color:white; 
     margin:0px 20px 20px 20px; border-radius:7px; padding:10px; box-sizing: border-box;
     border: 1px solid rgb(33, 0, 41); 
 }
@@ -58,7 +62,7 @@ html, body {
 
 .container-button span {
     position:relative; top:50%; left:50%; transform: translate(-50%, -50%); font-size:30px; 
-    background-color: #361374;
+    background-color: #2a4bcf;
     border-radius: 7px;
     transition: box-shadow 0.05s ease;
     transition: font-size 0.1s ease;
